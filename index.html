@@ -3,1727 +3,2026 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Risk Hub Serbia - Kompletna Tehnička i Design Dokumentacija</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
+    <title>Risk Hub Srbija - Bezbedna budućnost za srpsku decu</title>
+    <meta
+      name="description"
+      content="Risk Hub Srbija - Modernizacija bezbednosnog obrazovanja kroz Risk Bus, web platformu i mobilnu aplikaciju. Investicija u sigurnu budućnost srpske dece."
     />
+    <meta property="og:title" content="Risk Hub Srbija" />
+    <meta
+      property="og:description"
+      content="Inovativno bezbednosno obrazovanje za decu u Srbiji"
+    />
+    <meta property="og:type" content="website" />
     <style>
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-          }
-
-          body {
-              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              line-height: 1.6;
-              color: #2c3e50;
-              background: #f8f9fa;
-          }
-
-          .container {
-              max-width: 1200px;
-              margin: 0 auto;
-              padding: 0 20px;
-          }
-
-          /* Header */
-          .header {
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-              color: white;
-              padding: 3rem 0;
-              text-align: center;
-              position: relative;
-              overflow: hidden;
-          }
-
-          .header::after {
-              content: '';
-              position: absolute;
-              right: 250px;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 250px;
-              height: 250px;
-              background: url('https://i.imgur.com/Wu6fgIy.png') no-repeat center;
-              background-size: contain;
-              opacity: 1;
-              z-index: 1;
-            /*  filter: brightness(0) invert(1); */
-          }
-
-          .header .container {
-              position: relative;
-              z-index: 2;
-          }
-
-          /* Website Button Style */
-          .website-btn {
-              display: inline-flex;
-              align-items: center;
-              gap: 0.5rem;
-              padding: 0.7rem 1.5rem;
-              background: linear-gradient(45deg, #ffffff, #f8f9fa);
-              color: #667eea;
-              text-decoration: none;
-              border-radius: 25px;
-              font-weight: 600;
-              font-size: 0.9rem;
-              transition: all 0.3s ease;
-              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-              border: 2px solid rgba(255,255,255,0.8);
-          }
-
-          .website-btn:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-              background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-          }
-
-          .website-btn::before {
-              content: '🌐';
-              font-size: 1rem;
-          }
-
-          .header h1 {
-              font-family: 'Montserrat Alternates', sans-serif;
-              font-size: 3rem;
-              margin-bottom: 2rem;
-              font-weight: 800;
-              position: relative;
-          }
-
-      /*     .header h1::before {
-              content: '';
-              position: absolute;
-              left: -40px;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 180px;
-              height: 180px;
-              background: url('https://i.imgur.com/Wu6fgIy.png') no-repeat center;
-              background-size: contain;
-             filter: brightness(0) invert(1);
-              opacity: 1; */
-          }
-
-          .header-subtitle {
-              font-size: 3rem;.
-              margin-bottom: 2rem;
-              opacity: 0.9;
-          }
-
-          .header-meta {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 2rem;
-                            margin-top: 2rem;
-
-          }
-
-          .meta-item {
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              font-size: 1.1rem;
-          }
-
-          /* Navigation */
-          .nav {
-              background: white;
-              padding: 1rem 0;
-              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-              position: sticky;
-              top: 0;
-              z-index: 100;
-              position: relative;
-          }
-
-          .nav::before {
-              content: '';
-              position: absolute;
-              left: 20px;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 30px;
-              height: 30px;
-              background: url('https://i.imgur.com/Wu6fgIy.png') no-repeat center;
-              background-size: contain;
-              opacity: 0.3;
-          }
-
-          .nav ul {
-              list-style: none;
-              display: flex;
-              justify-content: center;
-              flex-wrap: wrap;
-              gap: 2rem;
-          }
-
-          .nav a {
-              text-decoration: none;
-              color: #2c3e50;
-              font-weight: 500;
-              padding: 0.5rem 1rem;
-              border-radius: 25px;
-              transition: all 0.3s ease;
-          }
-
-          .nav a:hover {
-              background: #667eea;
-              color: white;
-          }
-
-          /* Sections */
-          .section {
-              background: white;
-              margin: 2rem 0;
-              padding: 3rem;
-              border-radius: 15px;
-              box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-          }
-
-          .section-header {
-              display: flex;
-              align-items: center;
-              margin-bottom: 2rem;
-              gap: 1rem;
-          }
-
-          .section-number {
-              background: linear-gradient(45deg, #667eea, #764ba2);
-              color: white;
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-weight: 700;
-              font-size: 1.2rem;
-          }
-
-          .section h2 {
-              font-size: 2.2rem;
-              color: #2c3e50;
-          }
-
-          .section h3 {
-              color: #34495e;
-              margin: 2rem 0 1rem 0;
-              font-size: 1.5rem;
-          }
-
-          .section h4 {
-              color: #34495e;
-              margin: 1.5rem 0 1rem 0;
-              font-size: 1.2rem;
-          }
-
-          /* Info boxes */
-          .info-box {
-              background: #e8f4f8;
-              border-left: 4px solid #3498db;
-              padding: 1.5rem;
-              margin: 1.5rem 0;
-              border-radius: 5px;
-          }
-
-          .info-box.success {
-              background: #e8f5e8;
-              border-left-color: #27ae60;
-          }
-
-          .info-box.warning {
-              background: #fef9e7;
-              border-left-color: #f39c12;
-          }
-
-          .info-box-title {
-              font-weight: 700;
-              font-size: 1.1rem;
-              margin-bottom: 0.5rem;
-              color: #2c3e50;
-          }
-
-          /* Cards */
-          .card-grid {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-              gap: 2rem;
-              margin: 2rem 0;
-          }
-
-          .card {
-              background: #f8f9fa;
-              border: 1px solid #e9ecef;
-              border-radius: 10px;
-              padding: 2rem;
-          }
-
-          .card-header {
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-              margin-bottom: 1rem;
-          }
-
-          .card-icon {
-              font-size: 2rem;
-          }
-
-          .card-title {
-              font-size: 1.3rem;
-              font-weight: 600;
-              color: #2c3e50;
-          }
-
-          .card ul {
-              margin-top: 1rem;
-              padding-left: 1.5rem;
-          }
-
-          .card li {
-              margin-bottom: 0.5rem;
-          }
-
-          /* Metrics Dashboard */
-          .metrics-dashboard {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-              gap: 1.5rem;
-              margin: 2rem 0;
-          }
-
-          .metric-card {
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-              color: white;
-              padding: 2rem;
-              border-radius: 10px;
-              text-align: center;
-          }
-
-          .metric-value {
-              font-size: 2.5rem;
-              font-weight: 700;
-              display: block;
-          }
-
-          .metric-label {
-              font-size: 1rem;
-              margin-top: 0.5rem;
-              display: block;
-          }
-
-          .metric-change {
-              font-size: 0.9rem;
-              opacity: 0.8;
-              display: block;
-              margin-top: 0.5rem;
-          }
-
-          /* Tables */
-          .table-container {
-              overflow-x: auto;
-              margin: 2rem 0;
-              border-radius: 10px;
-              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-          }
-
-          table {
-              width: 100%;
-              border-collapse: collapse;
-              background: white;
-          }
-
-          th {
-              background: linear-gradient(45deg, #667eea, #764ba2);
-              color: white;
-              padding: 1rem;
-              text-align: left;
-              font-weight: 600;
-          }
-
-          td {
-              padding: 1rem;
-              border-bottom: 1px solid #e9ecef;
-          }
-
-          tr:hover {
-              background: #f8f9fa;
-          }
-
-          /* Feature List */
-          .feature-list {
-              list-style: none;
-              padding: 0;
-          }
-
-          .feature-list li {
-              padding: 0.5rem 0;
-              border-bottom: 1px solid #e9ecef;
-          }
-
-          .feature-list li:last-child {
-              border-bottom: none;
-          }
-
-          /* Module Cards */
-          .module-card {
-              background: white;
-              border: 2px solid #e9ecef;
-              border-radius: 15px;
-              padding: 2rem;
-              margin: 2rem 0;
-              position: relative;
-          }
-
-          .module-age-badge {
-              position: absolute;
-              top: -15px;
-              left: 2rem;
-              background: linear-gradient(45deg, #667eea, #764ba2);
-              color: white;
-              padding: 0.5rem 1rem;
-              border-radius: 20px;
-              font-weight: 600;
-              font-size: 0.9rem;
-          }
-
-          .module-title {
-              margin-top: 1rem;
-              color: #2c3e50;
-              font-size: 1.4rem;
-          }
-
-          .module-description {
-              margin: 1rem 0;
-              color: #666;
-          }
-
-          .module-objectives {
-              margin-top: 1.5rem;
-          }
-
-          .module-objectives-title {
-              font-weight: 600;
-              margin-bottom: 0.5rem;
-              color: #2c3e50;
-          }
-
-          /* Timeline */
-          .timeline {
-              position: relative;
-              padding: 2rem 0;
-          }
-
-          .timeline-item {
-              background: white;
-              border: 2px solid #e9ecef;
-              border-radius: 10px;
-              padding: 2rem;
-              margin: 2rem 0;
-              position: relative;
-          }
-
-          .timeline-marker {
-              position: absolute;
-              left: -15px;
-              top: 2rem;
-              width: 30px;
-              height: 30px;
-              background: linear-gradient(45deg, #667eea, #764ba2);
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: white;
-              font-weight: 700;
-              font-size: 0.9rem;
-          }
-
-          .timeline-title {
-              font-size: 1.3rem;
-              font-weight: 600;
-              color: #2c3e50;
-              margin-bottom: 1rem;
-          }
-
-          .timeline-description {
-              color: #666;
-          }
-
-          /* Comparison Table */
-          .comparison-table {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              gap: 1px;
-              background: #e0e0e0;
-              border-radius: 10px;
-              overflow: hidden;
-              margin: 2rem 0;
-          }
-
-          .comparison-row {
-              display: contents;
-          }
-
-          .comparison-cell {
-              padding: 1rem;
-              background: white;
-          }
-
-          .comparison-header {
-              background: linear-gradient(45deg, #667eea, #764ba2);
-              color: white;
-              font-weight: 700;
-          }
-
-          .comparison-feature {
-              background: #f8f9fa;
-              font-weight: 600;
-          }
-
-          .comparison-risk-hub {
-              background: #e8f4f8;
-              font-weight: 600;
-              color: #2980b9;
-          }
-
-          /* Contact Section */
-          .contact-section {
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-              color: white;
-              border-radius: 30px;
-              text-align: center;
-              position: relative;
-              overflow: hidden;
-              margin: 3rem 0;
-          }
-
-          .contact-section::before {
-              content: '';
-              position: absolute;
-              bottom: 20px;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 200px;
-              height: 200px;
-              background: url('https://i.imgur.com/Wu6fgIy.png') no-repeat center;
-              background-size: contain;
-              opacity: 0.1;
-              z-index: 1;
-              filter: brightness(0) invert(1);
-          }
-
-          .contact-content {
-              position: relative;
-              z-index: 2;
-              padding: 3rem;
-          }
-
-          .contact-grid {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: 2rem;
-              margin: 2rem 0;
-          }
-
-          .contact-card {
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(10px);
-              border: 1px solid rgba(255, 255, 255, 0.2);
-              border-radius: 15px;
-              padding: 2rem;
-              text-align: center;
-          }
-
-          .contact-icon {
-              font-size: 2.5rem;
-              margin-bottom: 1rem;
-              display: block;
-          }
-
-          .contact-title {
-              font-size: 1.2rem;
-              font-weight: 600;
-              margin-bottom: 1rem;
-          }
-
-          .contact-info {
-              font-size: 1rem;
-              opacity: 0.9;
-              line-height: 1.5;
-          }
-
-          .contact-cta {
-              background: rgba(255, 255, 255, 0.2);
-              border: 2px solid white;
-              color: white;
-              padding: 1rem 2rem;
-              border-radius: 50px;
-              text-decoration: none;
-              font-weight: 600;
-              font-size: 1.1rem;
-              display: inline-block;
-              margin-top: 2rem;
-              transition: all 0.3s ease;
-          }
-
-          .contact-cta:hover {
-              background: white;
-              color: #667eea;
-              transform: translateY(-2px);
-              box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-          }
-          .financial-table {
-              background: white;
-              border-radius: 10px;
-              overflow: hidden;
-              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-              margin: 2rem 0;
-          }
-
-          .financial-header {
-              background: linear-gradient(45deg, #667eea, #764ba2);
-              color: white;
-              padding: 1rem;
-              font-weight: 700;
-              font-size: 1.2rem;
-          }
-
-          .financial-row {
-              display: flex;
-              justify-content: space-between;
-              padding: 1rem;
-              border-bottom: 1px solid #e9ecef;
-          }
-
-          .financial-row:last-child {
-              border-bottom: none;
-          }
-
-          .financial-label {
-              flex: 1;
-          }
-
-          .financial-value {
-              font-weight: 600;
-              color: #2980b9;
-          }
-
-          /* Responsive */
-          @media (max-width: 768px) {
-              .header h1 {
-                  font-size: 2rem;
-              }
-
-              .header h1::before {
-                  left: -40px;
-                  width: 35px;
-                  height: 35px;
-              }
-
-              .section {
-                  padding: 2rem 1rem;
-              }
-
-              .nav ul {
-                  gap: 1rem;
-              }
-
-              .comparison-table {
-                  grid-template-columns: 1fr;
-              }
-
-              .metrics-dashboard {
-                  grid-template-columns: 1fr;
-              }
-
-              .card-grid {
-                  grid-template-columns: 1fr;
-              }
-
-              .timeline-marker {
-                  position: relative;
-                  left: 0;
-                  margin-bottom: 1rem;
-              }
-
-              .website-btn {
-                  font-size: 0.8rem;
-                  padding: 0.5rem 1rem;
-              }
-
-              .contact-grid {
-                  grid-template-columns: 1fr;
-              }
-
-              .contact-content {
-                  padding: 2rem 1rem;
-              }
-
-              .header::after {
-                  width: 120px;
-                  height: 120px;
-                  right: -20px;
-              }
-
-              .contact-section::before {
-                  width: 150px;
-                  height: 150px;
-                  bottom: -50px;
-              }
-          }
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --text-primary: #1a1a1a;
+        --text-secondary: #666666;
+        --primary-blue: #00517c;
+        --accent-red: #ab333c;
+        --success-green: #2e7d32;
+        --warning-orange: #b26a00;
+        --border-light: #e0e0e0;
+        --shadow-sm: rgba(0, 0, 0, 0.08);
+        --shadow-md: rgba(0, 0, 0, 0.12);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.7;
+        color: var(--text-primary);
+        background: var(--bg-primary);
+        overflow-x: hidden;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--primary-blue);
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        z-index: 1000;
+        border-radius: 0 0 8px 0;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 2px solid var(--border-light);
+        box-shadow: 0 2px 8px var(--shadow-sm);
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--primary-blue);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .logo-icon {
+        width: 42px;
+        height: 42px;
+        background: linear-gradient(135deg, var(--accent-red) 0%, #c94b54 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 900;
+        font-size: 24px;
+        box-shadow: 0 4px 12px rgba(171, 51, 60, 0.3);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.2s ease;
+        padding: 8px 12px;
+        border-radius: 6px;
+      }
+
+      nav a:hover {
+        color: var(--primary-blue);
+        background: var(--bg-secondary);
+      }
+
+      nav a:focus-visible {
+        outline: 3px solid var(--primary-blue);
+        outline-offset: 2px;
+      }
+
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      section:nth-child(even) {
+        background: var(--bg-secondary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: clamp(40px, 6vw, 64px);
+        color: var(--primary-blue);
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4.5vw, 48px);
+        color: var(--primary-blue);
+        margin-bottom: 32px;
+        letter-spacing: -0.5px;
+      }
+
+      h3 {
+        font-size: clamp(22px, 3vw, 28px);
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: var(--text-secondary);
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 17px;
+        color: var(--text-primary);
+        max-width: 75ch;
+      }
+
+      .hero {
+        padding: 120px 0 100px;
+        text-align: center;
+        background: linear-gradient(
+          180deg,
+          var(--bg-primary) 0%,
+          var(--bg-secondary) 100%
+        );
+      }
+
+      .hero-subtitle {
+        font-size: clamp(20px, 3vw, 26px);
+        color: var(--text-secondary);
+        margin-bottom: 48px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+
+      .cta-primary {
+        display: inline-block;
+        background: var(--accent-red);
+        color: white;
+        padding: 18px 40px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(171, 51, 60, 0.3);
+        margin-top: 16px;
+      }
+
+      .cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(171, 51, 60, 0.4);
+        background: #c13d47;
+      }
+
+      .cta-primary:focus-visible {
+        outline: 3px solid var(--accent-red);
+        outline-offset: 4px;
+      }
+
+      .intro-text {
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        border-left: 6px solid var(--primary-blue);
+        margin: 48px 0;
+        box-shadow: 0 4px 16px var(--shadow-sm);
+      }
+
+      .intro-text p {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .company-box {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        margin: 32px 0;
+        border: 2px solid var(--border-light);
+      }
+
+      .company-box h3 {
+        color: var(--primary-blue);
+        margin-bottom: 20px;
+      }
+
+      .company-box ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .company-box li {
+        padding: 12px 0 12px 32px;
+        position: relative;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .company-box li:last-child {
+        border-bottom: none;
+      }
+
+      .company-box li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--success-green);
+        font-weight: 900;
+        font-size: 20px;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin: 48px 0;
+      }
+
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 32px;
+        border: 2px solid var(--border-light);
+        box-shadow: 0 4px 16px var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px var(--shadow-md);
+        border-color: var(--primary-blue);
+      }
+
+      .card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .card ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .card li {
+        padding: 10px 0 10px 28px;
+        position: relative;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .card li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent-red);
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .pedagogy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 32px;
+        margin: 48px 0;
+      }
+
+      .pedagogy-card {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        border-top: 6px solid var(--primary-blue);
+        box-shadow: 0 4px 16px var(--shadow-sm);
+      }
+
+      .pedagogy-card h4 {
+        color: var(--primary-blue);
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+
+      .pedagogy-card strong {
+        display: block;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        color: var(--text-primary);
+      }
+
+      .pedagogy-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .pedagogy-card li {
+        padding: 8px 0 8px 24px;
+        position: relative;
+      }
+
+      .pedagogy-card li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent-red);
+        font-size: 20px;
+      }
+
+      .modules-grid {
+        display: grid;
+        gap: 32px;
+        margin: 48px 0;
+      }
+
+      .module-card {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        border-left: 6px solid var(--primary-blue);
+        box-shadow: 0 4px 16px var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .module-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 6px 20px var(--shadow-md);
+      }
+
+      .module-card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+
+      .module-card .module-meta {
+        background: var(--bg-secondary);
+        padding: 16px;
+        border-radius: 8px;
+        margin-top: 16px;
+        font-size: 15px;
+      }
+
+      .module-card .module-meta strong {
+        color: var(--primary-blue);
+      }
+
+      .module-card ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 16px;
+      }
+
+      .module-card li {
+        padding: 8px 0 8px 28px;
+        position: relative;
+      }
+
+      .module-card li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent-red);
+        font-weight: 700;
+      }
+
+      .tools-list {
+        list-style: none;
+        padding: 0;
+        margin: 48px 0;
+        display: grid;
+        gap: 20px;
+      }
+
+      .tools-list li {
+        background: white;
+        padding: 24px 24px 24px 72px;
+        border-radius: 12px;
+        position: relative;
+        border: 2px solid var(--border-light);
+        box-shadow: 0 2px 12px var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .tools-list li:hover {
+        border-color: var(--accent-red);
+        box-shadow: 0 4px 20px var(--shadow-md);
+      }
+
+      .tools-list li:before {
+        content: "⚡";
+        position: absolute;
+        left: 20px;
+        top: 24px;
+        font-size: 32px;
+      }
+
+      .tools-list strong {
+        color: var(--primary-blue);
+        font-size: 18px;
+      }
+
+      .outcome-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+        margin: 48px 0;
+      }
+
+      .outcome-card {
+        background: white;
+        padding: 28px 28px 28px 72px;
+        border-radius: 12px;
+        border-left: 6px solid var(--success-green);
+        position: relative;
+        box-shadow: 0 2px 12px var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .outcome-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px var(--shadow-md);
+      }
+
+      .outcome-card:before {
+        content: "✓";
+        position: absolute;
+        left: 20px;
+        top: 28px;
+        background: var(--success-green);
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 20px;
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+      }
+
+      .outcome-card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 18px;
+        color: var(--primary-blue);
+      }
+
+      .visit-flow {
+        margin: 48px 0;
+      }
+
+      .visit-duration {
+        background: var(--primary-blue);
+        color: white;
+        padding: 20px 32px;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 32px;
+        box-shadow: 0 4px 16px rgba(0, 81, 124, 0.3);
+      }
+
+      .visit-steps {
+        display: grid;
+        gap: 24px;
+      }
+
+      .visit-step {
+        background: white;
+        padding: 28px 28px 28px 84px;
+        border-radius: 12px;
+        border-left: 6px solid var(--accent-red);
+        position: relative;
+        box-shadow: 0 2px 12px var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .visit-step:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 20px var(--shadow-md);
+      }
+
+      .visit-step:before {
+        counter-increment: step-counter;
+        content: counter(step-counter);
+        position: absolute;
+        left: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--accent-red);
+        color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 22px;
+        box-shadow: 0 4px 12px rgba(171, 51, 60, 0.3);
+      }
+
+      .visit-flow {
+        counter-reset: step-counter;
+      }
+
+      .visit-step strong {
+        display: block;
+        font-size: 20px;
+        color: var(--primary-blue);
+        margin-bottom: 12px;
+      }
+
+      .table-responsive {
+        overflow-x: auto;
+        margin: 48px 0;
+        box-shadow: 0 4px 16px var(--shadow-sm);
+        border-radius: 12px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        font-size: 15px;
+      }
+
+      thead {
+        background: var(--primary-blue);
+        color: white;
+      }
+
+      th {
+        padding: 18px 16px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      td {
+        padding: 16px;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      tr:hover {
+        background: var(--bg-secondary);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+        margin: 48px 0;
+      }
+
+      .impact-card {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        border-top: 6px solid var(--success-green);
+        box-shadow: 0 4px 16px var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+
+      .impact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px var(--shadow-md);
+      }
+
+      .impact-card h3 {
+        color: var(--success-green);
+        margin-bottom: 20px;
+        font-size: 22px;
+      }
+
+      .impact-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .impact-card li {
+        padding: 8px 0 8px 28px;
+        position: relative;
+      }
+
+      .impact-card li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--success-green);
+        font-weight: 900;
+      }
+
+      .comparison-table {
+        margin: 48px 0;
+      }
+
+      .phases-list {
+        margin: 48px 0;
+        display: grid;
+        gap: 28px;
+      }
+
+      .phase-card {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        border-left: 6px solid var(--primary-blue);
+        box-shadow: 0 4px 16px var(--shadow-sm);
+      }
+
+      .phase-card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 20px;
+      }
+
+      .phase-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .phase-card li {
+        padding: 10px 0 10px 28px;
+        position: relative;
+      }
+
+      .phase-card li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--success-green);
+        font-weight: 900;
+        font-size: 18px;
+      }
+
+      .metrics-box {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          #006a9c 100%
+        );
+        color: white;
+        padding: 48px;
+        border-radius: 16px;
+        text-align: center;
+        margin: 48px 0;
+        box-shadow: 0 8px 24px rgba(0, 81, 124, 0.3);
+      }
+
+      .metrics-box h3 {
+        color: white;
+        margin-bottom: 32px;
+        font-size: 32px;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+      }
+
+      .metric-item {
+        text-align: center;
+      }
+
+      .metric-number {
+        font-size: 48px;
+        font-weight: 900;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .metric-label {
+        font-size: 18px;
+        opacity: 0.95;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin: 48px 0;
+      }
+
+      .contact-item {
+        background: white;
+        padding: 32px;
+        border-radius: 16px;
+        border: 2px solid var(--border-light);
+        box-shadow: 0 4px 16px var(--shadow-sm);
+      }
+
+      .contact-item h3 {
+        font-size: 16px;
+        color: var(--text-secondary);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+
+      .contact-item a {
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        word-break: break-word;
+        transition: all 0.2s ease;
+      }
+
+      .contact-item a:hover {
+        color: var(--accent-red);
+        text-decoration: underline;
+      }
+
+      .contact-item a:focus-visible {
+        outline: 3px solid var(--primary-blue);
+        outline-offset: 4px;
+        border-radius: 4px;
+      }
+
+      .cta-secondary {
+        display: inline-block;
+        background: var(--primary-blue);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        margin-top: 32px;
+        box-shadow: 0 4px 16px rgba(0, 81, 124, 0.3);
+      }
+
+      .cta-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 81, 124, 0.4);
+        background: #006a9c;
+      }
+
+      .cta-secondary:focus-visible {
+        outline: 3px solid var(--primary-blue);
+        outline-offset: 4px;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, var(--accent-red) 0%, #c94b54 100%);
+        color: white;
+        padding: 48px;
+        border-radius: 16px;
+        text-align: center;
+        margin: 64px 0;
+        box-shadow: 0 8px 24px rgba(171, 51, 60, 0.3);
+      }
+
+      .highlight-box h2 {
+        color: white;
+        margin-bottom: 24px;
+      }
+
+      .highlight-box p {
+        font-size: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .info-note {
+        background: var(--bg-secondary);
+        padding: 24px;
+        border-left: 4px solid var(--warning-orange);
+        border-radius: 8px;
+        margin: 24px 0;
+        font-size: 16px;
+      }
+
+      .info-note strong {
+        color: var(--warning-orange);
+      }
+
+      details {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        margin: 32px 0;
+        border: 2px solid var(--border-light);
+        box-shadow: 0 2px 12px var(--shadow-sm);
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--primary-blue);
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: all 0.2s ease;
+      }
+
+      summary:hover {
+        background: var(--bg-secondary);
+      }
+
+      summary:focus-visible {
+        outline: 3px solid var(--primary-blue);
+        outline-offset: 2px;
+      }
+
+      details[open] summary {
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--border-light);
+        padding-bottom: 16px;
+      }
+
+      details p {
+        max-width: 100%;
+      }
+
+      footer {
+        background: var(--primary-blue);
+        color: white;
+        padding: 48px 0;
+        text-align: center;
+      }
+
+      footer p {
+        margin-bottom: 12px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      footer a {
+        color: white;
+        text-decoration: underline;
+        transition: opacity 0.2s ease;
+      }
+
+      footer a:hover {
+        opacity: 0.8;
+      }
+
+      @media print {
+        header nav,
+        .cta-primary,
+        .cta-secondary,
+        .highlight-box {
+          display: none;
+        }
+
+        details[open] {
+          padding: 0;
+        }
+
+        section {
+          page-break-inside: avoid;
+          padding: 32px 0;
+        }
+
+        .card,
+        .visit-step,
+        .phase-card {
+          box-shadow: none;
+          border: 1px solid #ccc;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          padding: 16px 24px;
+        }
+
+        nav ul {
+          gap: 16px;
+          font-size: 14px;
+        }
+
+        .card-grid,
+        .outcome-grid,
+        .impact-grid,
+        .pedagogy-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 56px 0;
+        }
+
+        .wrapper {
+          padding: 0 24px;
+        }
+
+        .module-card {
+          padding: 24px;
+        }
+
+        .visit-step {
+          padding: 24px 24px 24px 76px;
+        }
+
+        .visit-step:before {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          left: 20px;
+        }
+
+        table {
+          font-size: 13px;
+        }
+
+        th,
+        td {
+          padding: 12px 8px;
+        }
+      }
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <h1>Risk Hub Serbia</h1>
-        <p class="header-subtitle">Kompletna Tehnička i Design Dokumentacija</p>
-        <div class="header-meta">
-          <a
-            href="http://bordi.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="website-btn"
-          >
-            Bordi DOO
-          </a>
-        </div>
+    <a href="#main" class="skip-link">Preskoči na sadržaj</a>
+
+    <header id="top">
+      <div class="header-content">
+        <a href="#top" class="logo">
+          <span class="logo-icon">R</span>
+          Risk Hub Srbija
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#hero">Početak</a></li>
+            <li><a href="#about">O projektu</a></li>
+            <li><a href="#pillars">Rešenje</a></li>
+            <li><a href="#pedagogy">Pedagogija</a></li>
+            <li><a href="#modules">Moduli</a></li>
+            <li><a href="#impact">Uticaj</a></li>
+            <li><a href="#phases">Faze</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container">
-        <ul>
-          <li><a href="#overview">Pregled</a></li>
-          <li><a href="#solution">Rešenje</a></li>
-          <li><a href="#modules">Moduli</a></li>
-          <li><a href="#implementation">Implementacija</a></li>
-          <li><a href="#financial">Finansije</a></li>
-          <li><a href="#impact">Uticaj</a></li>
-          <li><a href="#comparison">Poređenje</a></li>
-          <li><a href="#phases">Faze</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container">
-      <!-- Section 1: Overview -->
-      <section id="overview" class="section">
-        <div class="section-header">
-          <span class="section-number">1</span>
-          <h2>Pregled Projekta</h2>
-        </div>
-
-        <p>
-          <strong>Risk Hub Serbia</strong> predstavlja modularnu obrazovnu
-          inicijativu koja ima za cilj da poboljsanje bezbednosnog obrazovanja u
-          Srbiji. Projekat kombinuje Web platformu, mobilnu AI-powered
-          aplikaciju i pokretni edukativni centar (Risk Bus) kako bi stvorio
-          potpun ekosistem za učenje o bezbednosti. Edukacija o ovoj materiji
-          treba da krene od najmladjih, da bismo kroz par godina dobili citave
-          generacije odraslih, obucenih i odgovornih individua.
-        </p>
-
-        <div class="info-box">
-          <div class="info-box-title">Ključna Vizija</div>
-          <p>
-            Projekat proističe iz prepoznate potrebe za podizanjem svesti o
-            rizicima i unapređenjem bezbednosne kulture, oslanjajući se na
-            inovativne tehnologije kao što su gamifikacija, VR/AR i veštačka
-            inteligencija.
+    <main id="main">
+      <section id="hero" class="hero">
+        <div class="wrapper">
+          <h1>Risk Hub Srbija</h1>
+          <p class="hero-subtitle">
+            Misija: da svako dete u Srbiji nauči da prepozna rizik, donese pravu
+            odluku i bezbedno reaguje – u školi, kod kuće i napolju.
           </p>
-        </div>
-
-        <h3 id="about-bordi">O Kompaniji Bordi DOO</h3>
-        <p>
-          Bordi je softverska kompanija specijalizovana za razvoj tehnoloskih
-          resenja u sluzbi bezbednosti sto obuhvata aplikacije, platforme i
-          inovativna gejmifikovana iskustava.
-        </p>
-
-        <div class="metrics-dashboard">
-          <div class="metric-card">
-            <span class="metric-value">2019</span>
-            <span class="metric-label">Nagrada za eZOP</span>
-            <span class="metric-change">Najbolja Tehnološka Inovacija</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">15+</span>
-            <span class="metric-label">Godina Iskustva</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">100%</span>
-            <span class="metric-label">Domaći Razvoj</span>
-          </div>
-        </div>
-
-        <h3 id="references">Reference i Kapaciteti</h3>
-        <ul class="feature-list">
-          <li><strong>Softverski razvoj</strong> - Aplikacije, platforme</li>
-          <li>
-            <strong>Gamifikacija</strong> - UX Orijentisan pristup u razvoju
-            obrazovnih sadržaja
-          </li>
-          <li>
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 1rem;
-              "
-            >
-              <span
-                ><strong>eZOP</strong> - Elektronska evidencija protivpozarne
-                opreme</span
-              >
-              <a
-                href="https://ezop.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="website-btn"
-                >Posetite eZOP</a
-              >
-            </div>
-          </li>
-          <li>
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 1rem;
-              "
-            >
-              <span
-                ><strong>AWHM</strong> - Software za evidenciju i procenu rizika
-                od neželjenih incidenata sa pticama na aerodromima</span
-              >
-              <a
-                href="https://airportwhm.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="website-btn"
-                >Posetite AWHM</a
-              >
-            </div>
-          </li>
-          <li>
-            <strong>Tehnološke inovacije</strong> - Integracija VR/AR, AI i
-            interaktivnih tehnologija
-          </li>
-          <li>
-            <strong>Regulatorna usklađenost</strong> - Razvoj u skladu sa
-            pravnim bezbednosnim standardima
-          </li>
-        </ul>
-      </section>
-
-      <!-- Section 2: Solution -->
-      <section id="solution" class="section">
-        <div class="section-header">
-          <span class="section-number">2</span>
-          <h2>Predloženo Rešenje</h2>
-        </div>
-
-        <h3 id="ecosystem">Modularni Ekosistem - Tri Ključne Komponente</h3>
-
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">🌐</div>
-              <div class="card-title">Web Platforma</div>
-            </div>
-            <div class="card-content">
-              <p><strong>Globalni Edukativni Hub</strong></p>
-              <ul>
-                <li>Digitalni centar za bezbednosno obrazovanje</li>
-                <li>Strukturirane lekcije i interaktivni webinari</li>
-                <li>Freemium pristup sa premium sadržajem</li>
-                <li>Analitika i izvestaji napretka svakog korisnika</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">📱</div>
-              <div class="card-title">Mobilna AI Aplikacija</div>
-            </div>
-            <div class="card-content">
-              <p><strong>Mapiranje Rizika Oko Nas</strong></p>
-              <ul>
-                <li>AI analiza fotografija</li>
-                <li>Automatska detekcija opasnosti < 30s</li>
-                <li>Kreiranje heat mapa rizičnih lokacija</li>
-                <li>Mogucnost direktnog prijavljivanja problema</li>
-                <li>Izgradnja poverenja u zajednici</li>
-                <li>Real-time upozorenja i notifikacije</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">🚌</div>
-              <div class="card-title">Risk Bus</div>
-            </div>
-            <div class="card-content">
-              <p><strong>Mobilni Edukativni Centar</strong></p>
-              <ul>
-                <li>Autobus opremljen VR/AR tehnologijom</li>
-                <li>Interaktivni displeji i simulatori</li>
-                <li>Gamifikovani moduli za učenje</li>
-                <li>Dostupnost ruralnim sredinama</li>
-                <li>Jednodnevni programi za različite uzraste</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <h3 id="innovations">Inovacije U Sklopu Projekta</h3>
-
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Inovacija</th>
-                <th>Opis</th>
-                <th>Tehnologija</th>
-                <th>Očekivani Uticaj</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Gamifikacija</strong></td>
-                <td>Izazovi, nivoi, bedževi i rang-liste</td>
-                <td>Unreal Engine 5, Leaderboard API</td>
-                <td>Vece retencija znanja</td>
-              </tr>
-              <tr>
-                <td><strong>VR/AR Simulacije</strong></td>
-                <td>Bezbedne simulacije opasnih situacija</td>
-                <td>Oculus Quest, ARCore</td>
-                <td>3x bolje razumevanje</td>
-              </tr>
-              <tr>
-                <td><strong>AI Integracija</strong></td>
-                <td>Analiza slika, Procena rizika</td>
-                <td>TensorFlow, Computer Vision</td>
-                <td>brzo vreme detekcije</td>
-              </tr>
-            </tbody>
-          </table>
+          <a href="#contact" class="cta-primary">Kontakt i Saradnja</a>
         </div>
       </section>
 
-      <!-- Section 3: Educational Modules -->
-      <section id="modules" class="section">
-        <div class="section-header">
-          <span class="section-number">3</span>
-          <h2>Obrazovni Moduli</h2>
-        </div>
+      <section id="about">
+        <div class="wrapper">
+          <h2>O Risk Hub Srbija</h2>
 
-        <h3 id="age-groups">Pedagoški Pristup po Uzrasnim Grupama</h3>
+          <div class="intro-text">
+            <p>
+              <strong>Risk Hub Srbija</strong> predstavlja modularnu obrazovnu
+              inicijativu koja ima za cilj poboljšanje bezbednosnog obrazovanja
+              u Srbiji. Projekat kombinuje Web platformu, mobilnu AI aplikaciju
+              i pokretni edukativni centar (Risk Bus) kako bi stvorio potpun
+              ekosistem za učenje o bezbednosti.
+            </p>
+            <p>
+              Edukacija o ovoj materiji treba da krene od najmlađih, da bismo
+              kroz par godina dobili čitave generacije odraslih, obučenih i
+              odgovornih individua. Projekat proističe iz prepoznate potrebe za
+              podizanjem svesti o rizicima i unapređenjem bezbednosne kulture,
+              oslanjajući se na inovativne tehnologije kao što su gamifikacija,
+              hologramske projekcije i veštačka inteligencija.
+            </p>
+          </div>
 
-        <div class="info-box success">
-          <div class="info-box-title">Metodološki Pristup</div>
-          <p>
-            Program je strukturisan u tri osnovne kategorije, od kojih svaka ima
-            prilagođen pristup i metodologiju usklađenu sa razvojnim potrebama
-            dece, razvijeno u saradnji sa psiholozima, profesorima bezbednosti i
-            ostalim potrebnim osobljem obrazovnog sistema Srbije.
-          </p>
-        </div>
-
-        <!-- Age Group 1 -->
-        <div class="module-card">
-          <span class="module-age-badge">6 godina</span>
-          <h4 class="module-title">Grupa 1: Predškolci</h4>
-          <p class="module-description">
-            <strong>Metodologija:</strong> Učenje kroz igru, priče i simulacije.
-            Fokus je na prepoznavanju osnovnih pojmova i simbolike, bez
-            preteranog naglašavanja opasnosti koje bi mogle izazvati strah.
-          </p>
-          <div class="module-objectives">
-            <div class="module-objectives-title">Tipovi Lekcija:</div>
+          <div class="company-box">
+            <h3>O kompaniji Bordi DOO</h3>
+            <p>
+              Bordi je softverska kompanija specijalizovana za razvoj
+              tehnoloških rešenja u službi bezbednosti što obuhvata aplikacije,
+              platforme i inovativna gejmifikovana iskustva.
+            </p>
             <ul>
-              <li>Vizuelno privlačne sa animacijama</li>
-              <li>Usmerene na usvajanje jednostavnih, ključnih poruka</li>
               <li>
-                Bez korišćenja VR tehnologije (samo AR i interaktivni displeji)
+                <strong>Nagrada 2019:</strong> eZOP – Najbolja tehnološka
+                inovacija
+              </li>
+              <li>
+                <strong>15+ godina iskustva</strong> u softverskom razvoju
+              </li>
+              <li>
+                <strong>100% domaći razvoj</strong> – sve tehnologije razvijene
+                u Srbiji
+              </li>
+              <li>
+                <strong>Proizvodi:</strong> eZOP (ezop.app) i AWHM
+                (airportwhm.com)
               </li>
             </ul>
           </div>
         </div>
-
-        <!-- Age Group 2 -->
-        <div class="module-card">
-          <span class="module-age-badge">7-10 godina</span>
-          <h4 class="module-title">Grupa 2: Niži Razredi Osnovne Škole</h4>
-          <p class="module-description">
-            <strong>Metodologija:</strong> Iskustveno učenje kroz interaktivne
-            radionice i lagane gamifikovane simulacije. Cilj je da se teorijsko
-            znanje produbi kroz praktičnu primenu.
-          </p>
-          <div class="module-objectives">
-            <div class="module-objectives-title">Tipovi Lekcija:</div>
-            <ul>
-              <li>Kombinacija interaktivnih zadataka sa fizičkim vežbama</li>
-              <li>Korišćenje simulatora i escape-room koncepta</li>
-              <li>Uvođenje osnovnih VR iskustava</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Age Group 3 -->
-        <div class="module-card">
-          <span class="module-age-badge">11-14 godina</span>
-          <h4 class="module-title">Grupa 3: Viši Razredi Osnovne Škole</h4>
-          <p class="module-description">
-            <strong>Metodologija:</strong> Učenje kroz složenije VR simulacije,
-            analizu rizika i radionice koje zahtevaju kritičko razmišljanje.
-            Fokus je na razumevanju posledica i donošenju odgovornih odluka.
-          </p>
-          <div class="module-objectives">
-            <div class="module-objectives-title">Tipovi Lekcija:</div>
-            <ul>
-              <li>Radionice su složenije, duzeg trajanja</li>
-              <li>Često zahtevaju timski rad i komunikaciju</li>
-              <li>Potpuna VR/AR iskustva sa naprednim simulacijama</li>
-              <li>Analiza rizika i donošenje odluka u realnom vremenu</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3 id="module-details">Detaljni Pregled Modula u Risk Bus-u</h3>
-
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Modul</th>
-                <th>Aktivnost</th>
-                <th>Cilj Učenja</th>
-                <th>Tehnologija</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Bezbednost u Saobracaju</strong></td>
-                <td>
-                  Saobracajna kultura, Simulacija nezgoda, Simulacija reakcije
-                </td>
-                <td>
-                  Predvidjanje opasnosti, Bolja reakcija u rizicnim situacijama
-                </td>
-                <td>VR + AI</td>
-              </tr>
-              <tr>
-                <td><strong>Požar u Kuhinji</strong></td>
-                <td>Evakuacija, gašenje "vatre" aparatom</td>
-                <td>Brza reakcija, prepoznavanje vrste požara</td>
-                <td>VR + Simulator dima</td>
-              </tr>
-              <tr>
-                <td><strong>Simulator Poplave</strong></td>
-                <td>Traženje povišenog mesta, izbegavanje struje</td>
-                <td>Reagovanje na brzi porast vode</td>
-                <td>VR Oculus Quest</td>
-              </tr>
-              <tr>
-                <td><strong>Zemljotres Ploča</strong></td>
-                <td>Puzanje, "triangle of life" tehnika</td>
-                <td>Samozaštita kod potresa</td>
-                <td>Fizički simulator</td>
-              </tr>
-              <tr>
-                <td><strong>Evaluacija Klizišta</strong></td>
-                <td>AR "puštanje kiše", Aplikacija analiza terena</td>
-                <td>Razumevanje nestabilnog tla</td>
-                <td>AR maketa + tablet</td>
-              </tr>
-              <tr>
-                <td><strong>Svet Oko Mene</strong></td>
-                <td>Otkrivanje strukturalnih rizika</td>
-                <td>Prepoznavanje svakodnevnih opasnosti</td>
-                <td>Aplikacija i AI za analizu</td>
-              </tr>
-              <tr>
-                <td><strong>Tech Fire</strong></td>
-                <td>Detekcija pregrejanih baterija</td>
-                <td>Prevencija tehnoloških požara</td>
-                <td>VR + Termalna kamera</td>
-              </tr>
-              <tr>
-                <td><strong>Cyber Safety</strong></td>
-                <td>Rešavanje cyber zagonetki</td>
-                <td>Digitalna sigurnost</td>
-                <td>Interaktivni escape room</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </section>
 
-      <!-- Section 4: Implementation -->
-      <section id="implementation" class="section">
-        <div class="section-header">
-          <span class="section-number">4</span>
-          <h2>Protokol Implementacije</h2>
-        </div>
-
-        <h3 id="customer-journey">Korisnička Putanja</h3>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker">1</div>
-            <div class="timeline-content">
-              <div class="timeline-title">1. Priprema (Kod Kuće)</div>
-              <div class="timeline-description">
-                Učenici dobijaju QR kod ili link za pristup "Mala Škola Rizika"
-                veb platformi. Prolaze uvodni kviz znanja i kreiraju svoj profil
-                sa avatarima i personalizacijom.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">2</div>
-            <div class="timeline-content">
-              <div class="timeline-title">2. Poseta Risk Bus-u</div>
-              <div class="timeline-description">
-                Učenici dolaze u mobilnu učionicu na predodredjenom parkingu
-                (npr iza skole). Podeljeni u male grupe od 5-8 učenika, prolaze
-                kroz nekoliko interaktivnih modula prilagođenih njihovom
-                uzrastu.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">3</div>
-            <div class="timeline-content">
-              <div class="timeline-title">3. Evaluacija i Nagrada</div>
-              <div class="timeline-description">
-                Nakon sesije, svaki učenik dobija jedinstvenu nagradu, bedzeve,
-                digitalnu diplomu "Mali Menadžer Rizika" sa QR kodom. Rezultati
-                se automatski sinhronizuju sa njihovim profilom.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">4</div>
-            <div class="timeline-content">
-              <div class="timeline-title">4. Nastavak Učenja</div>
-              <div class="timeline-description">
-                Kroz mobilnu aplikaciju, učenici dobijaju pristup novim
-                sadržajima, kvizovima i izazovima. Mogu da učestvuju u
-                takmičenjima između škola i osvajaju dodatne bedževe.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">5</div>
-            <div class="timeline-content">
-              <div class="timeline-title">5. Lifelong Learning</div>
-              <div class="timeline-description">
-                Aplikacija se transformiše sa uzrastom korisnika, nudeći
-                napredne module za srednju školu, fakultet i profesionalni
-                razvoj, obezbeđujući kontinuitet obrazovanja.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h3>Paket za Korporacije i Pravna Lica</h3>
-
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">📞</div>
-              <div class="card-title">Dogovaranje</div>
-            </div>
-            <div class="card-content">
-              Kompanija dogovara posetu Risk Bus-a za obuku zaposlenih..
-              Prilagođavanje programa specifičnim potrebama industrije.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">🚌</div>
-              <div class="card-title">Obuka na Licu Mesta</div>
-            </div>
-            <div class="card-content">
-              Risk Bus dolazi na lokaciju kompanije. Zaposleni prolaze kroz
-              prilagođene VR simulacije relevantne za njihovu industriju.
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">📜</div>
-              <div class="card-title">Diploma</div>
-            </div>
-            <div class="card-content">
-              Zaposleni dobijaju bedzeve, diplome koji potvrđuju obuku kao i
-              pristup nasoj Web Platformi. Rezultati se beleže na korporativnom
-              nalogu za praćenje usklađenosti i dostavljanje potrebne analitike
-              o ucestvovanju kompanije u poboljsanju smanjenja rizika.
-            </div>
-          </div>
-        </div>
-
-        <h3 id="certification">Diplomiranje</h3>
-
-        <div class="info-box">
-          <div class="info-box-title">
-            Digitalni Identitet i Lifelong Learning
-          </div>
+      <section id="pillars">
+        <div class="wrapper">
+          <h2>Predloženo rešenje – Tri stuba</h2>
           <p>
-            Elektronska Diploma "Mali Menadžer Rizika" nije obicna e-nagrada,
-            već ključni element našeg ekosistema i "digitalni pasoš" za
-            kontinuirano učenje kroz nasu Web platformu.
+            Ekosistem sastavljen iz tri komplementarna elementa koji zajedno
+            stvaraju kompletno rešenje za bezbednosno obrazovanje:
           </p>
-        </div>
 
-        <h4>Karakteristike Elektronske Diplome:</h4>
-        <ul class="feature-list">
-          <li>
-            <strong>Jedinstveni ID:</strong> Svaka diploma ima jedinstveni
-            identifikacioni broj i digitalni potpis
-          </li>
-          <li>
-            <strong>QR Kod:</strong> Personalizovani QR kod povezan sa
-            korisničkim profilom na serveru
-          </li>
-          <li>
-            <strong>Prilagodljiv Dizajn:</strong> Vizuelno atraktivan za decu,
-            profesionalan za odrasle
-          </li>
-          <li>
-            <strong>Integracija sa LinkedIn:</strong> Mogućnost dodavanja na
-            profesionalni profil
-          </li>
-          <li>
-            <strong>Integracija sa Drustvenim Mrezama:</strong> Mogućnost
-            deljenja uspeha i bedzeva na drustvenim mrezama
-          </li>
-        </ul>
-      </section>
-
-      <!-- Section 5: Financial Plan -->
-      <section id="financial" class="section">
-        <div class="section-header">
-          <span class="section-number">5</span>
-          <h2>Model Prihoda i Monetizacija</h2>
-        </div>
-
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Izvor Prihoda</th>
-                <th>Ciljni Segment</th>
-                <th>Model Naplate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>B2G - Škole</strong></td>
-                <td>Osnovne škole</td>
-                <td>Po poseti</td>
-              </tr>
-              <tr>
-                <td><strong>B2B - Korporacije</strong></td>
-                <td>Kompanije (BZR obuke)</td>
-                <td>Po danu</td>
-              </tr>
-              <tr>
-                <td><strong>Platformska Pretplata</strong></td>
-                <td>Individualni korisnici</td>
-                <td>Mesecna/godisnja pretplata</td>
-              </tr>
-              <tr>
-                <td><strong>Sponzorstva</strong></td>
-                <td>Osiguravajuće kuće, banke</td>
-                <td>Godišnji ugovori</td>
-              </tr>
-              <tr>
-                <td><strong>EU Fondovi</strong></td>
-                <td>Grantovi za obrazovanje</td>
-                <td>Projektno finansiranje</td>
-              </tr>
-              <tr>
-                <td><strong>Regionalna Ekspanzija</strong></td>
-                <td>Licenciranje koncepta</td>
-                <td>Franšiza model</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Section 6: Impact -->
-      <section id="impact" class="section">
-        <div class="section-header">
-          <span class="section-number">6</span>
-          <h2>Društveni Uticaj i Koristi</h2>
-        </div>
-
-        <div class="metrics-dashboard">
-          <div class="metric-card">
-            <span class="metric-value">50,000+</span>
-            <span class="metric-label">Dece Godišnje</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">500+</span>
-            <span class="metric-label">Škola u Mreži</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">30%</span>
-            <span class="metric-label">Smanjenje Nezgoda</span>
-          </div>
-        </div>
-
-        <h3>Ključne Oblasti Uticaja</h3>
-
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">🛡️</div>
-              <div class="card-title">Bezbednost</div>
-            </div>
-            <div class="card-content">
+          <div class="card-grid">
+            <div class="card">
+              <h3>Risk Bus</h3>
               <ul>
-                <li>Manje povreda i nesreća među decom</li>
-                <li>Kultura prevencije od malih nogu</li>
+                <li>Mobilni edukativni centar u školskom dvorištu ili sali</li>
+                <li>Tematske zone sa scenarijima iz realnog života</li>
+                <li>Vođene simulacije kroz gamifikovan sadržaj</li>
+                <li>Interaktivni rekviziti i praktične vežbe</li>
+                <li>Brze odluke i timski rad</li>
+                <li>Bedževi, diplome i preporuke za nastavak</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Web Platforma</h3>
+              <ul>
+                <li>Materijali za nastavnike i roditelje</li>
+                <li>Priprema i nastavak učenja</li>
+                <li>Testovi znanja</li>
+                <li>Analitika napretka po školi, odeljenju ili učeniku</li>
+                <li>Praćenje ishoda učenja</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Mobilna AI Aplikacija</h3>
+              <ul>
+                <li>
+                  Skeniranje, analiza i izvestaj rizicnih situacija kamerom
+                </li>
+                <li>Dodatno obučavanje o potencijalnom riziku</li>
+                <li>AI maskota kao asistent</li>
+                <li>Prijava rizičnih situacija nadležnim službama</li>
+                <li>Gamifikacija i nastavak lekcija</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 64px">Tehnološke inovacije</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Inovacija</th>
+                  <th>Opis</th>
+                  <th>Tehnologija</th>
+                  <th>Očekivani Uticaj</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Gamifikacija</strong></td>
+                  <td>Izazovi, nivoi, bedževi i rang-liste</td>
+                  <td>Unreal Engine 5, Leaderboard API</td>
+                  <td>Veća retencija znanja</td>
+                </tr>
+                <tr>
+                  <td><strong>Interaktivne Stanice</strong></td>
+                  <td>
+                    1:1 realni prikaz učenje o rizicima i funkcionalnostima
+                    svakog objekta
+                  </td>
+                  <td>3D printovan objekat povezan sa digitalnim softverom</td>
+                  <td>
+                    Direktno iskustvo sa rizicima i potencijalnim nezgodama
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Hologramske Simulacije</strong></td>
+                  <td>Bezbedno vežbanje opasnih situacija</td>
+                  <td>Hologramske projekcije, Interaktivni display</td>
+                  <td>Do 3x bolje razumevanje</td>
+                </tr>
+                <tr>
+                  <td><strong>AI Integracija</strong></td>
+                  <td>Analiza slika, Procena rizika, AI maskota tutor</td>
+                  <td>Computer Vision, TensorFlow, NLP</td>
+                  <td>Brže vreme detekcije i personalizovano učenje</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="audience">
+        <div class="wrapper">
+          <h2>Za koga je program?</h2>
+          <div class="intro-text">
+            <p>
+              <strong>Primarno: 7. razred osnovne škole</strong> – Program je
+              dizajniran za učenike sedmog razreda, kada su deca razvojno
+              spremna za složenije koncepte bezbednosti i kritičko razmišljanje
+              o rizicima.
+            </p>
+            <p>
+              <strong>Prilagođena verzija: 3. razred</strong> – Za učenike
+              trećeg razreda postoji skraćena i pojednostavljena verzija
+              programa (~50% kraća), prilagođena mlađem uzrastu sa fokusom na
+              osnovne koncepte kroz igru i priče.
+            </p>
+          </div>
+
+          <div class="info-note">
+            <p>
+              <strong>Plan dugoročnog razvoja:</strong> Projekat Risk Hub Srbija
+              planira da se u budućnosti razvije i obuhvati dodatne uzrasne
+              kategorije, uključujući i učenike 3. razreda srednje škole, čime
+              bi se obezbedio kontinuitet bezbednosnog obrazovanja kroz sve faze
+              školovanja.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pedagogy">
+        <div class="wrapper">
+          <h2>Pedagoški pristup</h2>
+          <p>
+            Program je strukturiran u dve uzrasne grupe sa metodologijom
+            usklađenom sa razvojnim potrebama dece, razvijeno u saradnji sa
+            psiholozima, profesorima bezbednosti i stručnjacima iz obrazovnog
+            sistema Srbije.
+          </p>
+
+          <div class="pedagogy-grid">
+            <div class="pedagogy-card">
+              <h4>3. razred (8-9 godina)</h4>
+              <p>
+                <strong>Metodologija:</strong> Iskustveno učenje kroz
+                interaktivne radionice i blage simulacije. Jednostavne, ključne
+                poruke uz fokus na prepoznavanju osnovnih pojmova i simbolike.
+              </p>
+              <strong>Karakteristike programa:</strong>
+              <ul>
+                <li>Skraćena verzija (~50% kraća od programa za 7. razred)</li>
+                <li>Animacije i vizuelno privlačni sadržaji</li>
+                <li>Interaktivni zadaci i fizičke vežbe</li>
+                <li>Hologramske projekcije prilagođene uzrastu</li>
+                <li>Naglasak na pravilima kretanja i pozivanju pomoći</li>
+              </ul>
+            </div>
+
+            <div class="pedagogy-card">
+              <h4>7. razred (12-13 godina)</h4>
+              <p>
+                <strong>Metodologija:</strong> Složenije hologramske simulacije,
+                analiza rizika i radionice koje zahtevaju kritičko razmišljanje.
+                Fokus na razumevanju posledica i donošenju odgovornih odluka.
+              </p>
+              <strong>Karakteristike programa:</strong>
+              <ul>
+                <li>Kompletan program sa svim modulima</li>
+                <li>Duža trajanja, timski rad</li>
+                <li>Napredne hologramske simulacije</li>
+                <li>Odluke u realnom vremenu</li>
+                <li>Escape room i integracija znanja</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="company-box" style="margin-top: 32px">
+            <h3>Povezanost sa školskim kurikulumom</h3>
+            <p>
+              <strong
+                >Sve lekcije Risk Bus programa su povezane sa kurikulumom
+                predmeta za odgovarajuće uzraste u osnovnim školama
+                Srbije.</strong
+              >
+              Program bi se razvijao u saradnji sa obrazovnim institucijama kako
+              bi se osiguralo da sadržaj ne samo da dopunjuje školski program,
+              već direktno podržava ishode učenja definisane u nacionalnom
+              kurikulumu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="modules">
+        <div class="wrapper">
+          <h2>Tematske oblasti – Moduli programa</h2>
+          <p>
+            Program je podeljen u osam modula koji pokrivaju sve ključne aspekte
+            bezbednosti u svakodnevnom životu dece:
+          </p>
+
+          <div class="modules-grid">
+            <div class="module-card">
+              <h3>1. Uvod • Teorija • Persone</h3>
+              <p>
+                <strong>Cilj:</strong> Podići svest, postaviti pravila
+                bezbednosti i motivisati učenike.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Šta je obuka; brojevi za hitne
+                  slučajeve (112, 193, 194); kada delovati/kada tražiti pomoć;
+                  pravila ponašanja tokom radionice; dodela persona i
+                  "super-moći".
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Kratko brifovanje, mini-kviz,
+                  kartice/persona, bedževi za učešće.
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Učenici razumeju cilj obuke, znaju
+                  osnovne brojeve i pravila, prihvataju uloge u timu.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Kraći brif, naglasak na
+                  simbolima i kome se obraćamo za pomoć
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>2. Kod kuće</h3>
+              <p>
+                <strong>Cilj:</strong> Bezbedno ponašanje u domaćinstvu i
+                prepoznavanje tipičnih rizika.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Uređaji (vatra, struja, grejanje);
+                  opasni alati (kuhinja, garaža, hobi); osnovne prirodne
+                  nepogode (zemljotres, poplava, požar na otvorenom, klizište);
+                  nebezbedne situacije (ulazak nepoznatih/lopovi).
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Fizičke stanice i rekviziti,
+                  hologramske scene za izbor postupka, kratka AI pomoć, rad u
+                  paru.
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Učenik prepoznaje opasnost, zna da
+                  smiri situaciju, upozorava odrasle i zna osnovna pravila
+                  evakuacije.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Jednostavnije situacije, bez
+                  složenih uređaja; više vizuelnih primera
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>3. Put do škole</h3>
+              <p>
+                <strong>Cilj:</strong> Usvojiti bezbedne rute i ponašanje u
+                saobraćaju.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Scene nezgode (saobraćajne,
+                  vremenske, susret sa životinjama); izbor putanje
+                  (najbrža/najkraća/najsigurnija); saobraćajna pismenost
+                  (prelazak puta, semafor, znakovi); ponašanje u autobusu;
+                  osnove vožnje bicikla.
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Gamifikovane simulacije,
+                  hologramski prikazi raskrsnica, "mapiranje" rute škole,
+                  kartice za brzu odluku.
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Učenik ume da izabere bezbedniju rutu
+                  i poštuje pravila prelaska ulice i vožnje bicikla.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Fokus na prelazak ulice,
+                  semafor i kretanje u pratnji odraslih
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>4. U školi</h3>
+              <p>
+                <strong>Cilj:</strong> Znati kako se evakuiše i kako se reaguje
+                na rizike u školskom okruženju.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Escape ruta (mentalna mapa škole);
+                  kretanje u grupi (izbegavanje stampeda); postupci u rizičnim
+                  situacijama (sklanjanje, traženje pomoći); obnavljanje gradiva
+                  o uređajima i nepogodama; fizičke povrede; socijalni rizici
+                  (bullying, osnove prava deteta).
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Hologramske demonstracije,
+                  kartice sa postupcima, timske uloge, kratke diskusije
+                  "šta/zašto".
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Učenik zna kuda ide tokom evakuacije,
+                  kome prijavljuje problem i kako mirno reaguje u grupi.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Jednostavne rute, pravilo
+                  "stani-slušaj-prati učitelja"; teme nasilja obrađene kroz
+                  primerene priče
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>5. U prirodi</h3>
+              <p>
+                <strong>Cilj:</strong> Bezbedno kretanje i snalaženje na
+                otvorenom.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Šta poneti (osnovni set), kada je
+                  "previše"; kretanje terenima (uzbrdo/nizbrdo, preko plitke
+                  reke, preko drveta); orijentacija (kompas, mapa);
+                  prepoznavanje buba i zmija (koje su opasne); susret sa divljim
+                  životinjama – smiren, bezbedan odgovor bez približavanja.
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Fizičke stanice (simulirane
+                  prepreke), hologramske situacione scene, vežbe "Pogledaj –
+                  Razmisli – Zakorači".
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Učenik zna pravila kretanja, osnovnu
+                  orijentaciju i kako da izbegne rizične kontakte.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Naglasak na pravilima kretanja
+                  sa odraslom osobom i prepoznavanju opasnih znakova
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>6. Prva pomoć</h3>
+              <p>
+                <strong>Cilj:</strong> Usvojiti osnove procene stanja i
+                pozivanja pomoći.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Osnovni koraci (lična bezbednost –
+                  procena – pozovi 112/odrasle); upoznavanje sa sadržajem
+                  osnovnog seta; tipične situacije: umor, dehidratacija, ujed
+                  krpelja, alergijska reakcija, padanja/uganuća/prelomi, udarac
+                  u glavu, opekotine, ujed zmije, ujed pčele/ose, krvarenje iz
+                  nosa, davljenje, nizak šećer.
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Rekviziti (bezbedne
+                  lutke/rekviziti), kartice odluke, vođene demonstracije (bez
+                  medicinskih intervencija izvan nadležnosti deteta).
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Učenik zna da pozove pomoć, da proceni
+                  da li je potrebna prva pomoć i da primeni dozvoljene,
+                  jednostavne radnje.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Simboli i kome se obraćamo;
+                  naglasak na "ne paniči – pozovi odrasle"
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>7. Escape Room (Integracija znanja)</h3>
+              <p>
+                <strong>Cilj:</strong> Objediniti naučeno kroz kooperativni
+                izazov.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Dva tima; jedan je "zarobljen",
+                  drugi pomaže; niz problema koji se rešavaju znanjem iz
+                  prethodnih modula; kartice mogu otežavati zadatak (nove
+                  okolnosti).
+                </p>
+                <p>
+                  <strong>Aktivnosti:</strong> Hologramske prepreke, rekviziti,
+                  kartice sa brzim izborima, vremenski ograničeni izazovi.
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Timska komunikacija, raspodela uloga,
+                  donošenje odluka pod blagim pritiskom i primena pravila
+                  bezbednosti.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <strong>Za 3. razred:</strong> Kraći izazov, jasne i
+                  jednostavne instrukcije, akcenat na saradnji
+                </li>
+              </ul>
+            </div>
+
+            <div class="module-card">
+              <h3>8. Zatvaranje & nastavak (Web + App)</h3>
+              <p>
+                <strong>Cilj:</strong> Učvrstiti navike i obezbediti
+                kontinuitet.
+              </p>
+              <div class="module-meta">
+                <p>
+                  <strong>Sadržaj:</strong> Kratka refleksija "šta sam naučio";
+                  dodela bedževa/diploma; preporuke za kuću i školu; pristup
+                  kratkim mini-zadacima u aplikaciji i materijalima na web-u;
+                  pre/post test (po potrebi).
+                </p>
+                <p>
+                  <strong>Ishod:</strong> Znanje prelazi u rutine; roditelji i
+                  nastavnici imaju materijale za dalje učenje i primenu.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <details style="margin-top: 48px">
+            <summary>Za partnere i institucije – o detaljima programa</summary>
+            <p>
+              Detaljni scenariji, tehnička specifikacija stanica, raspored
+              modula po vremenskim intervalima i svi interni pedagoški
+              materijali su deo poverljive dokumentacije projekta. Ovaj sadržaj
+              se deli sa partnerima i institucijama uz dogovor o saradnji, kako
+              bismo zajedno prilagodili program specifičnim potrebama vaše
+              organizacije ili zajednice. Kontaktirajte nas za više informacija
+              i mogućnost uvida u kompletnu dokumentaciju.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section id="tools">
+        <div class="wrapper">
+          <h2>Alati koje koristimo</h2>
+          <p>
+            Kombinujemo moderne tehnologije i dokazane pedagoške pristupe za
+            maksimalan efekat učenja:
+          </p>
+
+          <ul class="tools-list">
+            <li>
+              <strong>Video igre i hologramske projekcije</strong> – Iskustveno
+              učenje bez fizičkog rizika, omogućava vežbanje realnih situacija u
+              bezbednom okruženju kroz napredne hologramske prikaze i video igre
+              visokog kvaliteta i realnih efekata.
+            </li>
+            <li>
+              <strong>Interaktivne stanice i rekviziti</strong> – Fizičko
+              isprobavanje pravilnih postupaka u kontrolisanim uslovima sa
+              bezbednim imitacijama opasnih situacija.
+            </li>
+            <li>
+              <strong>Kartice i persone</strong> – Gamifikovan pristup vođenja
+              predavanja kroz brze odluke, narativ i dodelu uloga koje podstiču
+              angažovanje.
+            </li>
+            <li>
+              <strong>AI maskota</strong> – Interaktivni tutor koji daje kratka
+              objašnjenja tokom predavanja ("Šta to znači?") i personalizovane
+              odgovore prilagođene svakom detetu.
+            </li>
+            <li>
+              <strong>Bedževi i diplome</strong> – Gamifikovan sistem
+              nagrađivanja koji pravi vidljiv napredak i motiviše kontinuirano
+              učenje.
+            </li>
+            <li>
+              <strong>Web platforma i aplikacija</strong> – Dodatni alati za
+              dalji nastavak obuke posle Risk Bus-a uz pomoć nastavnika i
+              roditelja. Uključuje pre i post testove, edukativne materijale i
+              sistem za održavanje navika.
+            </li>
+          </ul>
+
+          <div style="margin-top: 48px">
+            <h3>Elektronska diploma "Mali menadžer rizika"</h3>
+            <div class="company-box">
+              <p>
+                <strong
+                  >E-diploma je ključni element ekosistema i "digitalni pasoš"
+                  za kontinuirano učenje kroz vreme.</strong
+                >
+              </p>
+              <p>
+                Diploma se dobija kao <strong>štampana kartica</strong> sa QR
+                kodom preko koje učenik pristupa elektronskoj verziji diplome i
+                svom korisničkom profilu na platformi.
+              </p>
+              <ul>
+                <li>Jedinstveni ID i digitalni potpis</li>
+                <li>QR kod vezan za korisnički profil</li>
+                <li>Praćenje napretka i postignuća kroz vreme</li>
+                <li>Pristup dodatnim zadacima i izazovima</li>
+                <li>Integracija sa web platformom i aplikacijom</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="outcomes">
+        <div class="wrapper">
+          <h2>Ishodi učenja</h2>
+          <p>
+            Nakon završetka programa, deca stiču ključne kompetencije za
+            bezbedno ponašanje:
+          </p>
+
+          <div class="outcome-grid">
+            <div class="outcome-card">
+              <strong>Prepoznavanje opasnosti</strong>
+              Sposobnost da izaberu bezbedniju opciju u realnim situacijama i
+              prepoznaju potencijalne rizike u svom okruženju.
+            </div>
+
+            <div class="outcome-card">
+              <strong>Osnove pravilne reakcije</strong>
+              Znanje o tome kada i kako pravilno reagovati, uključujući
+              pozivanje pomoći u hitnim situacijama (112 i drugi brojevi).
+            </div>
+
+            <div class="outcome-card">
+              <strong>Timska saradnja i smirenost</strong>
+              Sposobnost timskog rada, održavanja smirenosti i preuzimanja
+              odgovornosti u stresnim situacijama.
+            </div>
+
+            <div class="outcome-card">
+              <strong>Kultura prevencije</strong>
+              Proaktivan pristup bezbednosti, prijavljivanje rizika i razvijanje
+              dugoročnih bezbednosnih navika.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bus-visit">
+        <div class="wrapper">
+          <h2>Risk Bus – Tok posete</h2>
+
+          <div class="visit-duration">
+            Poseta Risk Bus-u traje 90-120 minuta
+          </div>
+
+          <div class="visit-flow">
+            <div class="visit-steps">
+              <div class="visit-step">
+                <strong>Uvod</strong>
+                <p>
+                  Brifing o pravilima bezbednosti, dodela persona ili
+                  "super-moći" svakom učesniku i kratko upoznavanje sa ciljem
+                  obuke.
+                </p>
+              </div>
+
+              <div class="visit-step">
+                <strong>Prolazak kroz tematske module</strong>
+                <p>
+                  Rotacija kroz osam tematskih modula sa praktičnim scenarijima,
+                  hologramskim simulacijama i interaktivnim zadacima uz vodstvo
+                  instruktora.
+                </p>
+              </div>
+
+              <div class="visit-step">
+                <strong>Escape Room izazov</strong>
+                <p>
+                  Timska integracija znanja kroz kooperativni izazov gde učenici
+                  primenjuju sve što su naučili u gamifikovanom okruženju.
+                </p>
+              </div>
+
+              <div class="visit-step">
+                <strong>Refleksija i diskusija</strong>
+                <p>
+                  Kratka analiza onoga što je urađeno, razgovor o ključnim
+                  lekcijama i odgovaranje na pitanja učenika.
+                </p>
+              </div>
+
+              <div class="visit-step">
+                <strong>Zatvaranje</strong>
+                <p>
+                  Dodela bedževa i štampanih diploma sa QR kodom. Preporuke za
+                  primenu naučenog u školi i kod kuće.
+                </p>
+              </div>
+
+              <div class="visit-step">
+                <strong>Nastavak učenja</strong>
+                <p>
+                  Pristup web platformi i mobilnoj aplikaciji za kontinuirano
+                  učenje, mini-zadaci, pre/post testovi i materijali za
+                  roditelje i nastavnike.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="impact">
+        <div class="wrapper">
+          <h2>Društveni uticaj i koristi</h2>
+
+          <div class="metrics-box">
+            <h3>Ciljne metrike projekta</h3>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-number">10.000+</span>
+                <span class="metric-label">dece godišnje (prva godina)</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">100+</span>
+                <span class="metric-label">škola u mreži (prva godina)</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">30%</span>
+                <span class="metric-label"
+                  >smanjenje rizičnog ponašanja (cilj)</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 64px">Oblasti društvenog uticaja</h3>
+          <div class="impact-grid">
+            <div class="impact-card">
+              <h3>Bezbednost</h3>
+              <ul>
+                <li>Smanjenje broja povreda i nesreća kod dece</li>
+                <li>Razvijanje kulture prevencije i odgovornog ponašanja</li>
                 <li>Bolja pripremljenost za vanredne situacije</li>
-                <li>Smanjenje materijalnih šteta</li>
+                <li>Smanjenje materijalnih šteta u školama i domaćinstvima</li>
               </ul>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">🎓</div>
-              <div class="card-title">Obrazovanje</div>
-            </div>
-            <div class="card-content">
+            <div class="impact-card">
+              <h3>Obrazovanje</h3>
               <ul>
-                <li>Inovativna praktična nastava</li>
-                <li>Dostupnost urbanim i ruralnim školama</li>
-                <li>Povećanje STEM interesovanja</li>
-                <li>Razvoj kritičkog razmišljanja</li>
+                <li>Inovativna, praktična nastava povezana sa kurikulumom</li>
+                <li>Dostupnost urbanim i ruralnim školama kroz mobilnost</li>
+                <li>Podsticanje interesovanja za STEM oblasti</li>
+                <li>Razvijanje kritičkog razmišljanja i timskog rada</li>
               </ul>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">💰</div>
-              <div class="card-title">Ekonomija</div>
-            </div>
-            <div class="card-content">
+            <div class="impact-card">
+              <h3>Ekonomija</h3>
               <ul>
-                <li>Uštede u zdravstvu i hitnim službama</li>
-                <li>Nova radna mesta u tech sektoru</li>
-                <li>Privlačenje investicija</li>
-                <li>Izvozni potencijal koncepta</li>
+                <li>Uštede u zdravstvenom sistemu i hitnim službama</li>
+                <li>Kreiranje novih radnih mesta (instruktori, developeri)</li>
+                <li>Privlačenje investicija u obrazovne tehnologije</li>
+                <li>Izvozni potencijal tehnologije i know-how-a</li>
               </ul>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">🌍</div>
-              <div class="card-title">Imidž Srbije</div>
-            </div>
-            <div class="card-content">
+            <div class="impact-card">
+              <h3>Imidž Srbije</h3>
               <ul>
-                <li>Pionirski projekat u regionu</li>
-                <li>Pozitivan PR u medijima</li>
-                <li>Priznanja međunarodnih organizacija</li>
-                <li>Pozicioniranje kao lidera inovacija</li>
+                <li>Pionirski projekat u regionu Jugoistočne Evrope</li>
+                <li>Pozitivan međunarodni PR i prepoznatljivost</li>
+                <li>Potencijal za međunarodna priznanja i nagrade</li>
+                <li>
+                  Pozicioniranje Srbije kao lidera u edukativnim inovacijama
+                </li>
               </ul>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">👥</div>
-              <div class="card-title">Zajednica</div>
-            </div>
-            <div class="card-content">
+            <div class="impact-card">
+              <h3>Zajednica</h3>
               <ul>
-                <li>Jačanje lokalnih kapaciteta</li>
-                <li>Multipliciranje znanja kroz porodice</li>
-                <li>Stvaranje otpornih zajednica</li>
-                <li>Povećanje društvene kohezije</li>
+                <li>Jačanje lokalnih kapaciteta za reagovanje u krizama</li>
+                <li>Multiplikacija znanja kroz porodice i okolinu</li>
+                <li>Izgradnja otpornijih i bezbednijih zajednica</li>
+                <li>Veća socijalna kohezija i odgovornost</li>
               </ul>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <div class="card-icon">📈</div>
-              <div class="card-title">Dugoročni Razvoj</div>
-            </div>
-            <div class="card-content">
+            <div class="impact-card">
+              <h3>Dugoročni razvoj</h3>
               <ul>
-                <li>Skalabilnost na region</li>
-                <li>Kontinuirano unapređenje</li>
-                <li>Integracija novih tehnologija</li>
-                <li>Stvaranje ekosistema partnera</li>
+                <li>Skaliranje na cele Balkane i širu regiju</li>
+                <li>Kontinuirano unapređenje programa novim tehnologijama</li>
+                <li>Izgradnja ekosistema partnera i institucija</li>
+                <li>Razvoj dodatnih programa za sve uzraste</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 7: Comparison -->
-      <section id="comparison" class="section">
-        <div class="section-header">
-          <span class="section-number">7</span>
-          <h2>Poređenje sa Risk Factory Modelom</h2>
-        </div>
-
-        <div class="info-box warning">
-          <div class="info-box-title">
-            Risk Factory Twente - Referentni Model
-          </div>
+      <section id="comparison">
+        <div class="wrapper">
+          <h2>Poređenje sa Risk Factory Twente</h2>
           <p>
-            Risk Factory u Twente (Holandija) je statični edukativni centar koji
-            godišnje prima preko 25,000 posetilaca. Naš model nadograđuje ovaj
-            koncept kroz mobilnost i tehnološke inovacije.
-          </p>
-          <div style="margin-top: 1rem">
             <a
-              href="https://riskfactorytwente.nl/en/"
+              href="https://riskfactorytwente.nl"
               target="_blank"
-              rel="noopener noreferrer"
-              class="website-btn"
-              >Posetite Risk Factory Twente</a
+              rel="noopener"
+              >Risk Factory u Twente (Holandija)</a
             >
-          </div>
-        </div>
-
-        <div class="comparison-table">
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-header">Karakteristika</div>
-            <div class="comparison-cell comparison-header">
-              Risk Factory Twente
-            </div>
-            <div class="comparison-cell comparison-header">Risk Hub Serbia</div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Lokacija</div>
-            <div class="comparison-cell">Statični centar u jednom gradu</div>
-            <div class="comparison-cell comparison-risk-hub">
-              Mobilna + Digitalna distribucija
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Dostupnost</div>
-            <div class="comparison-cell">Ograničena na jednu regiju</div>
-            <div class="comparison-cell comparison-risk-hub">
-              Nacionalni i ruralni domet
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Investicija</div>
-            <div class="comparison-cell">€2-3 miliona jednokratno</div>
-            <div class="comparison-cell comparison-risk-hub">
-              Postepena, modularna
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Tehnologija</div>
-            <div class="comparison-cell">Fizičke simulacije</div>
-            <div class="comparison-cell comparison-risk-hub">
-              VR/AR + AI + Gamifikacija
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Kapacitet</div>
-            <div class="comparison-cell">100-150 dece dnevno</div>
-            <div class="comparison-cell comparison-risk-hub">
-              200+ dece dnevno + online
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Kontinuitet</div>
-            <div class="comparison-cell">Jednokratna poseta</div>
-            <div class="comparison-cell comparison-risk-hub">
-              Stalna online podrška
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">Skalabilnost</div>
-            <div class="comparison-cell">Teško skalabilno</div>
-            <div class="comparison-cell comparison-risk-hub">
-              Lako skalabilno (više buseva)
-            </div>
-          </div>
-          <div class="comparison-row">
-            <div class="comparison-cell comparison-feature">
-              Update Sadržaja
-            </div>
-            <div class="comparison-cell">Skupe fizičke izmene</div>
-            <div class="comparison-cell comparison-risk-hub">
-              Software update
-            </div>
-          </div>
-        </div>
-
-        <h3>Konkurentske Prednosti Risk Hub Serbia</h3>
-        <ul class="feature-list">
-          <li>
-            <strong>Mobilnost:</strong> Dostižemo decu tamo gde su, bez potrebe
-            za skupim putovanjima
-          </li>
-          <li>
-            <strong>Tehnološka Superiornost:</strong> Najnovije VR/AR
-            tehnologije omogućavaju realističnije simulacije
-          </li>
-          <li>
-            <strong>Niži Troškovi:</strong> Niža inicijalna investicija sa
-            potencijalno boljim ROI
-          </li>
-          <li>
-            <strong>Fleksibilnost:</strong> Lako prilagođavanje različitim
-            uzrastima i industrijama
-          </li>
-          <li>
-            <strong>Digitalni Ekosistem:</strong> Kontinuirano učenje kroz web i
-            mobilne platforme
-          </li>
-          <li>
-            <strong>Data-Driven Pristup:</strong> AI analitika za
-            personalizovano učenje i praćenje napretka
-          </li>
-        </ul>
-      </section>
-
-      <!-- Section 8: Phases -->
-      <section id="phases" class="section">
-        <div class="section-header">
-          <span class="section-number">8</span>
-          <h2>Faze Implementacije</h2>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker">1</div>
-            <div class="timeline-content">
-              <div class="timeline-title">
-                Faza 1: Pilot Program (Meseci 1-6)
-              </div>
-              <div class="timeline-description">
-                <ul>
-                  <li>Razvoj prve verzije Risk Bus-a</li>
-                  <li>Testiranje sa do 10 škola u Beogradu</li>
-                  <li>Prikupljanje feedback-a i iteracija</li>
-                  <li>Inicijalni razvoj web platforme</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">2</div>
-            <div class="timeline-content">
-              <div class="timeline-title">Faza 2: Ekspanzija (Meseci 7-12)</div>
-              <div class="timeline-description">
-                <ul>
-                  <li>Lansiranje u do 5 gradova Srbije</li>
-                  <li>Potpuni razvoj mobilne aplikacije</li>
-                  <li>Partnerstva sa korporacijama</li>
-                  <li>Marketing kampanja</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">3</div>
-            <div class="timeline-content">
-              <div class="timeline-title">
-                Faza 3: Nacionalni Nivo (Godina 2)
-              </div>
-              <div class="timeline-description">
-                <ul>
-                  <li>Pokrivanje cele Srbije</li>
-                  <li>Drugi Risk Bus u funkciji</li>
-                  <li>Integracija sa nacionalnim kurikulumom</li>
-                  <li>Početak regionalne ekspanzije</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-marker">4</div>
-            <div class="timeline-content">
-              <div class="timeline-title">
-                Faza 4: Regionalni Lider (Godine 3-5)
-              </div>
-              <div class="timeline-description">
-                <ul>
-                  <li>Franšiza model za region</li>
-                  <li>
-                    Pocetak realizacije plana za Risk Hub fizički centar u
-                    Beogradu
-                  </li>
-                  <li>Međunarodna priznanja i sertifikati</li>
-                  <li>Izvoz tehnologije i know-how</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h3>Kljucni Indikatori Uspeha (KPIs)</h3>
-        <div class="metrics-dashboard">
-          <div class="metric-card">
-            <span class="metric-value">1000</span>
-            <span class="metric-label">Škola u Programu</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">50,000</span>
-            <span class="metric-label">Obučene Dece</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">30%</span>
-            <span class="metric-label">Smanjenje Rizika</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Closing Section -->
-      <section class="contact-section">
-        <div class="contact-content">
-          <h2 style="color: white; margin-bottom: 2rem; font-size: 2.5rem">
-            Zaključak i Poziv na Akciju
-          </h2>
-          <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95">
-            <strong>Risk Hub Serbia</strong> predstavlja jedinstvenu priliku za
-            Srbiju da postane regionalni lider u inovativnom bezbednosnom
-            obrazovanju.
+            je statični edukativni centar koji godišnje prima preko 25.000
+            posetilaca. Naš model nadograđuje ovaj koncept kroz mobilnost i
+            tehnološke inovacije.
           </p>
 
-          <div
-            style="
-              background: rgba(255, 255, 255, 0.1);
-              border-radius: 15px;
-              padding: 2rem;
-              margin: 2rem 0;
-              backdrop-filter: blur(10px);
-            "
-          >
-            <h3 style="color: white; margin-bottom: 1rem">
-              Zajedno možemo stvoriti održiv model koji će:
-            </h3>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-                text-align: left;
-              "
-            >
-              <div>✓ Poboljšati bezbednosnu kulturu</div>
-              <div>✓ Podići standarde u obrazovanju</div>
-              <div>
-                ✓ Stvoriti izvozni proizvod visokog tehnološkog sadržaja
-              </div>
-              <div>✓ Pozicionirati Srbiju kao inovacionog lidera u regionu</div>
+          <div class="table-responsive comparison-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Atribut</th>
+                  <th>Risk Factory Twente</th>
+                  <th>Risk Hub Srbija</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lokacija</strong></td>
+                  <td>Statični centar u jednom gradu</td>
+                  <td>Mobilna + digitalna distribucija</td>
+                </tr>
+                <tr>
+                  <td><strong>Dostupnost</strong></td>
+                  <td>Jedna regija</td>
+                  <td>Nacionalni i ruralni domet</td>
+                </tr>
+                <tr>
+                  <td><strong>Investicija</strong></td>
+                  <td>€2-3M jednokratno</td>
+                  <td>Postepena, modularna</td>
+                </tr>
+                <tr>
+                  <td><strong>Tehnologija</strong></td>
+                  <td>Fizičke simulacije</td>
+                  <td>Hologramske projekcije + AI + gamifikacija</td>
+                </tr>
+                <tr>
+                  <td><strong>Kapacitet</strong></td>
+                  <td>100-150 dece/dan</td>
+                  <td>100+ dece/dan + online podrška</td>
+                </tr>
+                <tr>
+                  <td><strong>Kontinuitet</strong></td>
+                  <td>Jednokratna poseta</td>
+                  <td>Stalna online podrška kroz web i app</td>
+                </tr>
+                <tr>
+                  <td><strong>Skalabilnost</strong></td>
+                  <td>Teška</td>
+                  <td>Laka (više buseva i online ekspanzija)</td>
+                </tr>
+                <tr>
+                  <td><strong>Update sadržaja</strong></td>
+                  <td>Skupa fizička izmena</td>
+                  <td>Software i hologram update</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Naše prednosti</h3>
+          <div class="company-box">
+            <ul>
+              <li>Mobilnost – dolazimo tamo gde su deca</li>
+              <li>Tehnološka superiornost kroz hologramske projekcije i AI</li>
+              <li>Niža inicijalna investicija, bolji ROI potencijal</li>
+              <li>
+                Fleksibilnost za različite uzraste i prilagođavanje programa
+              </li>
+              <li>Digitalni ekosistem za kontinuirano učenje posle posete</li>
+              <li>Data-driven analitika i personalizacija kroz AI maskotu</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="phases">
+        <div class="wrapper">
+          <h2>Faze implementacije</h2>
+          <p>Realizacija projekta planirana je kroz četiri ključne faze:</p>
+
+          <div class="phases-list">
+            <div class="phase-card">
+              <h3>Faza 1 – Pilot (meseci 1-6)</h3>
+              <ul>
+                <li>Prva verzija Risk Bus-a sa kompletnim modulima</li>
+                <li>Test sa do 10 škola u Beogradu</li>
+                <li>Prikupljanje feedback-a i iteracije programa</li>
+                <li>Inicijalni razvoj web platforme i aplikacije</li>
+              </ul>
+            </div>
+
+            <div class="phase-card">
+              <h3>Faza 2 – Ekspanzija (meseci 7-12)</h3>
+              <ul>
+                <li>Lansiranje u do 5 gradova u Srbiji</li>
+                <li>Kompletiranje mobilne aplikacije sa AI maskotom</li>
+                <li>Partnerstva sa korporacijama za BZR obuke</li>
+                <li>Marketing kampanja i medijska pokrivenost</li>
+              </ul>
+            </div>
+
+            <div class="phase-card">
+              <h3>Faza 3 – Nacionalno (godina 2)</h3>
+              <ul>
+                <li>Pokrivanje cele Srbije</li>
+                <li>Drugi Risk Bus za paralelne posete</li>
+                <li>Integracija u školski kurikulum</li>
+                <li>Početak regionalne ekspanzije (Balkani)</li>
+              </ul>
+            </div>
+
+            <div class="phase-card">
+              <h3>Faza 4 – Regionalni lider (god. 3-5)</h3>
+              <ul>
+                <li>Franšiza model u regionu (licenciranje)</li>
+                <li>Plan za statični Risk Factory centar u Beogradu</li>
+                <li>Međunarodni sertifikati i priznanja</li>
+                <li>Izvoz tehnologije i know-how-a</li>
+              </ul>
             </div>
           </div>
 
-          <h3 style="color: white; margin: 2rem 0 1rem 0">Kontaktirajte Nas</h3>
+          <div class="metrics-box" style="margin-top: 48px">
+            <h3>Ključni indikatori uspeha (KPI) – Petogodišnji plan</h3>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-number">500</span>
+                <span class="metric-label">škola u programu</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">50.000</span>
+                <span class="metric-label">obučenih godišnje</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">30%</span>
+                <span class="metric-label">smanjenje rizika (cilj)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="highlight-box">
+        <div class="wrapper">
+          <h2>Poziv na saradnju</h2>
+          <p>
+            Risk Hub Srbija predstavlja jedinstvenu priliku za Srbiju da postane
+            regionalni lider u inovativnom bezbednosnom obrazovanju. Pozivamo
+            sve zainteresovane strane – institucije, investitore, fakultete i
+            partnere – da se pridruže ovoj transformativnoj inicijativi i
+            zajedno stvorimo održiv model za bezbednije društvo.
+          </p>
+        </div>
+      </div>
+
+      <section id="contact">
+        <div class="wrapper">
+          <h2>Kontakt</h2>
+          <p>
+            Želite li da saznate više o projektu Risk Hub Srbija? Kontaktirajte
+            nas:
+          </p>
 
           <div class="contact-grid">
-            <div class="contact-card">
-              <span class="contact-icon">📧</span>
-              <div class="contact-title">Email</div>
-              <div class="contact-info">
-                <a
-                  href="mailto:info@bordi.co"
-                  style="color: white; text-decoration: none"
-                  >info@bordi.co</a
-                >
-              </div>
+            <div class="contact-item">
+              <h3>Email</h3>
+              <a href="mailto:info@bordi.co">info@bordi.co</a>
             </div>
 
-            <div class="contact-card">
-              <span class="contact-icon">📍</span>
-              <div class="contact-title">Adresa</div>
-              <div class="contact-info">
-                Narodnih Heroja 111<br />
-                11070 Novi Beograd, Srbija
-              </div>
+            <div class="contact-item">
+              <h3>Adresa</h3>
+              <p>Narodnih Heroja 111<br />11070 Novi Beograd, Srbija</p>
             </div>
 
-            <div class="contact-card">
-              <span class="contact-icon">📞</span>
-              <div class="contact-title">Telefon</div>
-              <div class="contact-info">
-                Fiksni:
-                <a
-                  href="tel:+381116187354"
-                  style="color: white; text-decoration: none"
-                  >(+381) 11 6187354</a
-                ><br />
-                CEO Marko Malbasa:
-                <a
-                  href="tel:+381642440000"
-                  style="color: white; text-decoration: none"
-                  >(+381) 64 2440000</a
+            <div class="contact-item">
+              <h3>Telefon</h3>
+              <p>
+                <a href="tel:+381116187354">+381 11 6187354</a><br />
+                <a href="tel:+381642440000">+381 64 2440000</a><br />
+                <small style="color: var(--text-secondary)"
+                  >Marko Malbaša</small
                 >
-              </div>
+              </p>
+              <p>
+                <a href="tel:+381631704767">+381 63 1704767</a><br />
+                <small style="color: var(--text-secondary)"
+                  >Stefan Malinović</small
+                >
+              </p>
             </div>
           </div>
 
-          <p style="font-size: 1.2rem; margin: 2rem 0; font-weight: 600">
-            Pozivamo sve zainteresovane strane da se pridruže ovoj
-            transformativnoj inicijativi.
-          </p>
-
-          <a href="mailto:info@bordi.co" class="contact-cta">
-            Započnite Saradnju Danas
-          </a>
+          <a
+            href="mailto:info@bordi.co?subject=Zakazivanje%20razgovora%20-%20Risk%20Hub%20Srbija&body=Poštovani,%0D%0A%0D%0AZainteresovan/a sam za više informacija o Risk Hub Srbija projektu.%0D%0A%0D%0ASrdačan pozdrav"
+            class="cta-secondary"
+            >Zakaži razgovor</a
+          >
         </div>
       </section>
-    </div>
+    </main>
 
-    <script>
-      // Smooth scrolling for navigation
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-    </script>
+    <footer>
+      <div class="wrapper">
+        <p>&copy; 2025 Risk Hub Srbija | Bordi DOO | Sva prava zadržana</p>
+        <p>Investicija u bezbednu budućnost srpske dece</p>
+        <p style="margin-top: 16px">
+          <a href="https://bordi.co" target="_blank" rel="noopener">bordi.co</a>
+          | <a href="https://ezop.app" target="_blank" rel="noopener">eZOP</a> |
+          <a href="https://airportwhm.com" target="_blank" rel="noopener"
+            >AWHM</a
+          >
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
